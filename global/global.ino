@@ -1,3 +1,6 @@
+#include <ArduinoJson.h>
+const int TAMANHO = 200;
+
 volatile unsigned long cont = 0;
 unsigned long tempo = 0;
 long VeloAngu = 0;
@@ -39,7 +42,14 @@ void loop() {
     
     cont = 0;
   }
-
+  //formato de leitura do node-red
+  StaticJsonDocument <TAMANHO> json;
+  json["topic"] = "Sensor";
+  json["temp"] = Tc;
+  json["lux"] = L;
+  json["velo"] = VeloKmh;
+  serializeJson( json, Serial);
+  Serial.println();
 }
 
 //função que faz leitura da temperatura e retorna o valor em graus celcius
