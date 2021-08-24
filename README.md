@@ -1,7 +1,5 @@
 # Checkpoint 04 - TechUp Projects
 
-# Nome do projeto 
-
 **Nome dos alunos:** 
 
 * Élida Coelho da Silva  RM: 85599
